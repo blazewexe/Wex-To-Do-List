@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f1b5a4">
+    <meta name="description" content="A simple to-do list that keeps your tasks in your browser.">
+    <title>Wex To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="app-card" aria-labelledby="page-title">
+        <header class="app-header">
+          <div>
+            <p class="eyebrow">To-Do List</p>
+            <h1 id="page-title">Wex To-Do List</h1>
+          </div>
+        </header>
+
+        <form class="task-form" id="task-form">
+          <label class="sr-only" for="task-input">New task</label>
+          <input id="task-input" type="text" maxlength="160" placeholder="Add a task..." autocomplete="off">
+          <button class="gif-button" type="submit" aria-label="Add task">
+            <img src="https://media.tenor.com/EL7zfInn_vsAAAAM/taking-notes-noting.gif" alt="">
+          </button>
+        </form>
+
+        <div class="toolbar">
+          <div class="filters" role="group" aria-label="Filter tasks">
+            <button class="filter-button is-active" type="button" data-filter="all">All <span id="all-count">0</span></button>
+            <button class="filter-button" type="button" data-filter="active">Active <span id="active-count">0</span></button>
+            <button class="filter-button" type="button" data-filter="completed">Done <span id="completed-count">0</span></button>
+          </div>
+          <label class="sort-control">
+            <span>Sort</span>
+            <select id="sort-select" aria-label="Sort tasks">
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
+              <option value="az">A–Z</option>
+              <option value="za">Z–A</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="task-list-wrap">
+          <ul class="task-list" id="task-list" aria-live="polite"></ul>
+          <div class="empty-state" id="empty-state">
+            <span class="empty-icon" aria-hidden="true">✦</span>
+            <h2 id="empty-title">Nothing here yet</h2>
+            <p id="empty-copy">Add the task from above so that you can see it here !!!</p>
+          </div>
+        </div>
+
+        <footer class="app-footer">
+          <span id="progress-text">0 tasks</span>
+          <button class="text-button" id="clear-completed" type="button">Clear completed</button>
+        </footer>
+      </section>
+      <p class="storage-note"><span aria-hidden="true">✓</span>Dw its been saved to your browser</p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
