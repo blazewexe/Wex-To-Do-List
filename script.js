@@ -59,7 +59,7 @@ function render() {
   elements.empty.hidden = visible.length > 0;
   elements.emptyTitle.textContent = state.tasks.length === 0 ? "Nothing here yet" : "No matching tasks";
   elements.emptyCopy.textContent = state.tasks.length === 0
-    ? "Add a task above and make some room in your head."
+    ? "Add the task from above so that you can see it here !!!"
     : "Try another filter or add a new task.";
 
   const completed = state.tasks.filter(task => task.completed).length;
